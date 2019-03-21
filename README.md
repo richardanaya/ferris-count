@@ -1,8 +1,7 @@
-# Corn
+# Ferris Count
 
-Corn is a simple simulation written in ECS style. The game features are simple:
+This is a simple repo that tests some limits of canvas using web assembly and canvas using Rust.
 
-* your character can plant corn
-* you can adjust the speed speed of the world
-* there is night and day and seasons
-* grown corn can be harvested
+Go here to try it out on your browser:
+
+https://richardanaya.github.io/ferris-count/
