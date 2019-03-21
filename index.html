@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Sprite Tests</title>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script>
+    <script src="https://unpkg.com/web-dom@latest/web-dom.js"></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: black;
+      }
+
+      #screen {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -320px;
+        margin-top: -240px;
+      }
+
+      img {
+        display: none;
+      }
+      select {
+        position: absolute;
+        top: 10;
+        left: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <select>
+      <option value="1">1 ferris</option>
+      <option value="10">10 ferris</option>
+      <option value="100">100 ferris</option>
+      <option value="1000">1000 ferris</option>
+      <option value="10000">10000 ferris</option>
+      <option value="100000">100000 ferris</option>
+    </select>
+    <img id="ferris" src="ferris.png" />
+    <canvas id="screen" width="640" height="480"></canvas>
+    <web-dom module="spritetest.wasm"></web-dom>
+  </body>
+</html>
