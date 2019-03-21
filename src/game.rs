@@ -1,6 +1,6 @@
 use web_dom::*;
-const WIDTH: i32 = 640;
-const HEIGHT: i32 = 480;
+const WIDTH: f32 = 640.0;
+const HEIGHT: f32 = 480.0;
 
 pub struct GameState {
     ferris_count: i32,
@@ -49,7 +49,7 @@ impl GameState {
     pub fn run(&mut self) {
         self.clear();
         for _ in 0..self.ferris_count{
-            drawing::draw_image(self.ctx, self.image, 0, 0, 128, 86,(math::random()*(WIDTH-128) as f32) as i32, (math::random()*(HEIGHT-86) as f32) as i32, 128, 86);
+            drawing::draw_image(self.ctx, self.image, 0.0, 0.0, 128.0, 86.0,math::random()*(WIDTH-128.0), math::random()*(HEIGHT-86.0), 128.0, 86.0);
         }
         let diff = date::now()-self.frame_time;
         self.frame_time = date::now();
@@ -57,11 +57,11 @@ impl GameState {
             let fps = (1000.0/diff) as i32;
             drawing::set_fill_style(self.ctx, "white");
             drawing::set_font(self.ctx, "30px Arial");
-            drawing::fill_text(self.ctx, &fps.to_string(), 50, 50, 1000);
+            drawing::fill_text(self.ctx, &fps.to_string(), 50.0, 50.0, 1000.0);
         }
     }
 
     pub fn clear(&self) {
-        drawing::clear_rect(self.ctx, 0, 0, WIDTH, HEIGHT);
+        drawing::clear_rect(self.ctx, 0.0, 0.0, WIDTH, HEIGHT);
     }
 }
